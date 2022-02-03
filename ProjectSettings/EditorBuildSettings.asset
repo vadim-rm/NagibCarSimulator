@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Tests/PlayMode/PlayModeTestScenes/TargetPlacementTest.unity
-    guid: 3d328f38f71b71e47bb8d96869012ffe
-  - enabled: 0
-    path: Assets/Tests/PlayMode/PlayModeTestScenes/TargetPlacementTest.unity
-    guid: 3d328f38f71b71e47bb8d96869012ffe
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 510e3a95eca75c34b909dae26f12922e
