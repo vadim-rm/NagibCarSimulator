@@ -64,7 +64,7 @@ public class CarController : MonoBehaviour
     void SetSpeedAndRotate(RosControl controlMessage)
     {
         rosVerticalInput = controlMessage.speed / 100f;
-        rosHorizontalInput = map(controlMessage.rotation, 0f, 180f, -1f, 1f);
+        rosHorizontalInput = map(controlMessage.rotation, -90f, 90f, -1f, 1f);
     }
 
     private void FixedUpdate()
