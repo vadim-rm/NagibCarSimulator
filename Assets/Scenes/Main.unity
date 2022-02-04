@@ -2203,6 +2203,51 @@ MonoBehaviour:
   rearRightWheelTransform: {fileID: 8581249103549023448}
   spawnRotation: {x: 2.9287927, y: 303.9614, z: 358.41653}
   spawnPosition: {x: -417.14, y: 0.73, z: 17.66}
+--- !u!1 &1472025234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472025236}
+  - component: {fileID: 1472025235}
+  m_Layer: 0
+  m_Name: Display
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1472025235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472025234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7769112a280cd4a5eab3b210afc72d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayTexture: {fileID: 8400000, guid: 0795bed9c078e45e48c11f5bbc454293, type: 2}
+--- !u!4 &1472025236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472025234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -418.53775, y: 3.0637178, z: 18.682037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1506085487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3004,7 +3049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 76d9d5c787b914b3b8cad12341da5151, type: 2}
+  m_Texture: {fileID: 8400000, guid: 0795bed9c078e45e48c11f5bbc454293, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -13585,36 +13630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fefceefe666bb4682b272ec8c5bdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 3767436511580104631}
-  spawnRotation: {x: 2.9287925, y: 303.9614, z: 358.41653}
-  spawnPosition: {x: -417.14, y: 0.73, z: 17.66}
-  maxSpeed: 20
-  maxReverseSpeed: 45
-  accelerationMultiplier: 1
-  maxSteeringAngle: 45
-  steeringSpeed: 0.7
-  brakeForce: 450
-  decelerationMultiplier: 2
-  handbrakeDriftMultiplier: 5
-  bodyMassCenter: {x: 0, y: 0, z: 0}
-  frontLeftMesh: {fileID: 4946824130129952965}
-  frontLeftCollider: {fileID: 2573153942650410968}
-  frontRightMesh: {fileID: 1324049106246655234}
-  frontRightCollider: {fileID: 5904881142222004578}
-  rearLeftMesh: {fileID: 7690733312329658578}
-  rearLeftCollider: {fileID: 5418056022087416500}
-  rearRightMesh: {fileID: 2339039904238117843}
-  rearRightCollider: {fileID: 4933005708029391811}
-  RLWParticleSystem: {fileID: 124123254520368582}
-  RRWParticleSystem: {fileID: 124123254262592194}
-  RLWTireSkid: {fileID: 6730570808137054733}
-  RRWTireSkid: {fileID: 6730570806626519243}
-  carSpeed: 0
-  isDrifting: 0
-  isTractionLocked: 0
-  carSpeedText: {fileID: 0}
-  carEngineSound: {fileID: 0}
-  tireScreechSound: {fileID: 0}
 --- !u!4 &4540559880123186445
 Transform:
   m_ObjectHideFlags: 0
