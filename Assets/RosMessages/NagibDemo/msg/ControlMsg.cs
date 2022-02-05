@@ -10,7 +10,7 @@ namespace RosMessageTypes.NagibDemo
     [Serializable]
     public class ControlMsg : Message
     {
-        public const string k_RosMessageName = "nagib_demo_msgs/Control";
+        public const string k_RosMessageName = "car_msgs/Control";
         public override string RosMessageName => k_RosMessageName;
 
         public sbyte speed;

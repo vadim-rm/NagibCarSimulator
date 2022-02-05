@@ -10,7 +10,7 @@ namespace RosMessageTypes.NagibDemo
     [Serializable]
     public class DisplayMsg : Message
     {
-        public const string k_RosMessageName = "nagib_demo_msgs/Display";
+        public const string k_RosMessageName = "car_msgs/Display";
         public override string RosMessageName => k_RosMessageName;
 
         public string image;
