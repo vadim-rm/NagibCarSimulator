@@ -40,18 +40,6 @@ public class CameraController : MonoBehaviour
 
         if (timeElapsed > publishMessageFrequency)
         {
-            // camera.targetTexture = renderTexture;
-            // RenderTexture currentRT = RenderTexture.active;
-            // RenderTexture.active = renderTexture;
-            // camera.Render();
-            // Texture2D mainCameraTexture = new Texture2D(renderTexture.width, renderTexture.height);
-            // mainCameraTexture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
-            // mainCameraTexture.Apply();
-            // RenderTexture.active = currentRT;
-            // // Get the raw byte info from the screenshot
-            // byte[] imageBytes = mainCameraTexture.GetRawTextureData();
-            // camera.targetTexture = null;
-
             RenderTexture activeRenderTexture = RenderTexture.active;
             RenderTexture.active = camera.targetTexture;
     

@@ -32,7 +32,10 @@ public class CarController : MonoBehaviour
     private float rosHorizontalInput;
     private float rosVerticalInput;
 
+    private float currentSpeed;
+
     [SerializeField] private GameObject car;
+    [SerializeField] public float maxSpeed;
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
@@ -53,6 +56,7 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
         ROSConnection.GetOrCreateInstance().Subscribe<RosControl>("control", SetSpeedAndRotate);
     }
 
@@ -69,6 +73,7 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        currentSpeed = GetComponent<Rigidbody>().velocity.magnitude;
         GetInput();
         HandleMotor();
         HandleSteering();
@@ -100,10 +105,24 @@ public class CarController : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+        float kSpeed = currentSpeed / maxSpeed;
+        if (kSpeed <= 0.95)
+        {
+            setMotorTorque(verticalInput * motorForce);
+        } else {
+            setMotorTorque(verticalInput * (motorForce / 100f));
+        }
+        
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();       
+    }
+
+    private void setMotorTorque(float motorTorque)
+    {
+        frontLeftWheelCollider.motorTorque = motorTorque;
+        frontRightWheelCollider.motorTorque = motorTorque;
+        rearLeftWheelCollider.motorTorque = motorTorque;
+        rearRightWheelCollider.motorTorque = motorTorque;
     }
 
     private void ApplyBreaking()
