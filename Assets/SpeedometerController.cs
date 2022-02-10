@@ -15,6 +15,6 @@ public class SpeedometerController : MonoBehaviour
         float speed = car.GetComponent<Rigidbody>().velocity.magnitude;
         float maxSpeed = car.GetComponent<CarController>().maxSpeed;
         
-        textMeshPro.text = string.Format("{0:00} km/h", Mathf.Clamp(speed/maxSpeed, 0f, 1f) * fakeMaxSpeed);
+        textMeshPro.text = string.Format("{0:00} km/h", (speed/maxSpeed) * fakeMaxSpeed);
     }
 }

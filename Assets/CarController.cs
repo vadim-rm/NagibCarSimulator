@@ -33,9 +33,11 @@ public class CarController : MonoBehaviour
     private float rosVerticalInput;
 
     private float currentSpeed;
+    private bool limitSpeed = true;
 
     [SerializeField] private GameObject car;
     [SerializeField] public float maxSpeed;
+    [SerializeField] private float maxUserSpeed;
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
@@ -85,6 +87,7 @@ public class CarController : MonoBehaviour
     {
         float keyboardHorizontalInput = Input.GetAxis(HORIZONTAL);
         float keyboardVerticalInput = Input.GetAxis(VERTICAL);
+        limitSpeed = !Input.GetKey(KeyCode.LeftAlt);
         
         if (!Input.GetKey(KeyCode.LeftShift)) {
             verticalInput = rosVerticalInput;
@@ -106,7 +109,11 @@ public class CarController : MonoBehaviour
     private void HandleMotor()
     {
         float kSpeed = currentSpeed / maxSpeed;
-        if (kSpeed <= 0.95)
+        if (!limitSpeed) 
+        {
+            setMotorTorque(verticalInput * motorForce);
+        }
+        else if (kSpeed <= 0.95)
         {
             setMotorTorque(verticalInput * motorForce);
         } else {
