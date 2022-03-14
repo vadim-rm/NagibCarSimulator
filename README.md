@@ -2,7 +2,7 @@
 
 This repository includes the simulator code for a self-driving car made with Unity.\
 The ROS used as a controlling part.\
-A code that controls the car available in <a href="https://github.com/proton-bit/NTO_ATC">NTO_ATC</a> repository.\
+A code that controls the car available in <a href="https://github.com/proton-bit/SelfDrivingCar">SelfDrivingCar</a> repository.\
 Docker image for connecting to the simulation available [here](https://github.com/vadim-rm/CarSimDocker).
 
 This simulator was created by our team "Nagibators":
